@@ -1,0 +1,5 @@
+tsconfig*
+dist
+.prettierrc.json
+eslint.config.js
+package*.json
