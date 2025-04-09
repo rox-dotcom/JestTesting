@@ -7,3 +7,7 @@ export function forEach<T>(items: T[], callback: Callback<T>): void {
     callback(item);
   }
 }
+
+export function mockedFunction(num: number): number {
+  return num + 6;
+}

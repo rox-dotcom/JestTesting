@@ -34,6 +34,12 @@ test("it works", () => {
   screen.debug(); // logs the current state of the DOM (with syntax highlighting!)
 });
 
+test("it works", () => {
+  expect(true).toBe(true);
+});
+
+
+
 /*
 React Testing Library has the following automatic features:
 - It automatically cleans up the DOM after each test. This means that you

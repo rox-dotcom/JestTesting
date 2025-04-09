@@ -14,5 +14,5 @@ export const superHeros = [
   { name: "Batman", power: ["Intelligence", "Martial Arts", "Billionaire"] },
   { name: "Flash", power: ["Super Speed", "Time Travel"] },
   { name: "WonderWoman", power: ["Super Strength", "Agility", "Fly"] },
-  { name: "Aquaman", power: ["Water Control", "Super Strength"] },
+  //{ name: "Aquaman", power: ["Water Control", "Super Strength"] },
 ];
