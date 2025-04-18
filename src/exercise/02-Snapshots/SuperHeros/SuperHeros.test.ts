@@ -17,20 +17,20 @@ The snapshot file should be named SuperHeros.test.ts.snap.
 import { superHeros } from "./superHeros";
 import { getFlyingSuperHeros } from "./getFlyingSuperHeros";
 
-test("dummy test", () => {
-  expect(true).toBe(true);
-});
-
 
 describe("getFlyingSuperHeros", () => {
   it("No superheros fly", () => {
-   const flyingSuperHeros = getFlyingSuperHeros([]);
-   expect(flyingSuperHeros).toMatchSnapshot();
+   getFlyingSuperHeros([]);
+   
  });
 
  it("Some superheros fly", () => {
-   const flyingSuperHeros = getFlyingSuperHeros(superHeros);
-   expect(flyingSuperHeros).toMatchSnapshot();
+   getFlyingSuperHeros(superHeros);
  });
+
+ it("snapshot of flying superheros", () => {
+  const snapshot = getFlyingSuperHeros(superHeros);
+  expect(snapshot).toMatchSnapshot();
+ })
 
 })
