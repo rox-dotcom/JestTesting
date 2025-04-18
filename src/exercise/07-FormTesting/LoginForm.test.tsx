@@ -1,10 +1,8 @@
 // src/exercise/Exercise04to08/07-FormTesting/LoginForm.test.tsx
 
 import { render, screen, fireEvent } from '@testing-library/react';
-import userEvent from '@testing-library/user-event';
 import LoginForm from './LoginForm';
-import { buildLoginForm } from './loginBuilder';
-import React from 'react';
+
 
 test('should submit form with dynamic data', async () => {
     const handleSubmit = jest.fn();
