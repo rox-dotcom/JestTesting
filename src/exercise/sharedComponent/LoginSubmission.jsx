@@ -62,7 +62,7 @@ function useFormSubmission({ endpoint, data }) {
 const LoginSubmission = () => {
   const [formData, setFormData] = React.useState(null);
   const { status, responseData, errorMessage } = useFormSubmission({
-    endpoint: "/api/login",
+    endpoint: "https://auth-provider.example.com/api/login",
     data: formData,
   });
   return (

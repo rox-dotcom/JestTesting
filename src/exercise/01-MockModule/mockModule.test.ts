@@ -29,30 +29,30 @@ describe("convertCase with mocked utils", () => {
   });
 
   it("should call toUpperCase and return mocked value", () => {
-    (utils.toUpperCase as jest.Mock).mockReturnValue("MOCKED-UPPER");
+    (utils.toUpperCase as jest.Mock).mockReturnValue("TEST");
 
     const result = convertCase(input, "upper");
 
     expect(utils.toUpperCase).toHaveBeenCalledWith(input);
-    expect(result).toBe("MOCKED-UPPER");
+    expect(result).toBe("TEST");
   });
 
   it("should call toLowerCase and return mocked value", () => {
-    (utils.toLowerCase as jest.Mock).mockReturnValue("mocked-lower");
+    (utils.toLowerCase as jest.Mock).mockReturnValue("test");
 
     const result = convertCase(input, "lower");
 
     expect(utils.toLowerCase).toHaveBeenCalledWith(input);
-    expect(result).toBe("mocked-lower");
+    expect(result).toBe("test");
   });
 
   it("should call reverseString and return mocked value", () => {
-    (utils.reverseString as jest.Mock).mockReturnValue("dEtSeM");
+    (utils.reverseString as jest.Mock).mockReturnValue("tSeT");
 
     const result = convertCase(input, "reverse");
 
     expect(utils.reverseString).toHaveBeenCalledWith(input);
-    expect(result).toBe("dEtSeM");
+    expect(result).toBe("tSeT");
   });
 
   it("should return original string when caseType is 'unknown'", () => {

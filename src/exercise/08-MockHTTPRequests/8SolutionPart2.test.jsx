@@ -12,7 +12,7 @@ import LoginSubmission from "../sharedComponent/LoginSubmission";
 
 // Define Mock Hanlder
 const server = setupServer(
-  rest.post("/api/login", async (req, res, ctx) => {
+  rest.post("https://auth-provider.example.com/api/login", async (req, res, ctx) => {
     const { username, password } = await req.json();
 
     if (username === "admin" && password === "secret123") {

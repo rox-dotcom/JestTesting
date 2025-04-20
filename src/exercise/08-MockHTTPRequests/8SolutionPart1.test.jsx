@@ -12,7 +12,7 @@ import LoginSubmission from "../sharedComponent/LoginSubmission";
 
 // Define Mock Hanlder
 const server = setupServer(
-  rest.post("/api/login", async (req, res, ctx) => {
+  rest.post("https://auth-provider.example.com/api/login", async (req, res, ctx) => {
     const { username, password } = await req.json();
 
     if (username === "admin" && password === "secret123") {
@@ -46,7 +46,7 @@ describe("LoginSubmission Component", () => {
         await userEvent.click(loginButton);
     
         // Spinner appears
-        await waitForElementToBeRemoved(() => screen.getByRole("status"));
+        await waitForElementToBeRemoved(() => screen.getByLabelText(/loading/i));
     
         expect(await screen.findByText(/welcome/i)).toBeInTheDocument();
     });
@@ -59,7 +59,7 @@ describe("LoginSubmission Component", () => {
         await userEvent.type(usernameInput, "admin");
         await userEvent.click(loginButton);
     
-        await waitForElementToBeRemoved(() => screen.getByRole("status"));
+        await waitForElementToBeRemoved(() => screen.getByLabelText(/loading/i));
         expect(await screen.findByRole("alert")).toHaveTextContent("Invalid username or password");
     });
     
@@ -71,7 +71,7 @@ describe("LoginSubmission Component", () => {
         await userEvent.type(passwordInput, "secret123");
         await userEvent.click(loginButton);
     
-        await waitForElementToBeRemoved(() => screen.getByRole("status"));
+        await waitForElementToBeRemoved(() => screen.getByLabelText(/loading/i));
     
         expect(await screen.findByRole("alert")).toHaveTextContent(/invalid username or password/i);
     });
