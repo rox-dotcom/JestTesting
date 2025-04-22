@@ -46,7 +46,7 @@ describe("LoginSubmission Component", () => {
         await userEvent.click(loginButton);
     
         // Spinner appears
-        await waitForElementToBeRemoved(() => screen.getByRole("status"));
+        await waitForElementToBeRemoved(() => screen.getByLabelText(/loading/i));
     
         expect(await screen.findByText(/welcome/i)).toBeInTheDocument();
     });
@@ -59,7 +59,7 @@ describe("LoginSubmission Component", () => {
         await userEvent.type(usernameInput, "admin");
         await userEvent.click(loginButton);
     
-        await waitForElementToBeRemoved(() => screen.getByRole("status"));
+       await waitForElementToBeRemoved(() => screen.getByLabelText(/loading/i));
         expect(await screen.findByRole("alert")).toMatchInlineSnapshot(`
 <div
   role="alert"
@@ -78,7 +78,7 @@ describe("LoginSubmission Component", () => {
         await userEvent.type(passwordInput, "secret125");
         await userEvent.click(loginButton);
     
-        await waitForElementToBeRemoved(() => screen.getByRole("status"));
+        await waitForElementToBeRemoved(() => screen.getByLabelText(/loading/i));
     
         expect(await screen.findByRole("alert")).toMatchInlineSnapshot(`
 <div
