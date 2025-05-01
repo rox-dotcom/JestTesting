@@ -10,9 +10,6 @@ function createWrapper(themeValue) {
   }
   
 
-
-
-
   describe("EasyButton", () => {
     it("renders with light theme", () => {
       render(<EasyButton />, { wrapper: createWrapper("light") });
