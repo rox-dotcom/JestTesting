@@ -20,7 +20,7 @@ public class DataBankAccountTest {
         
     }
 
-    @Test(dataProvider = "TestDeposit")
+    @Test(groups={"data"},dataProvider = "TestDeposit")
     public void getDepositData(double initialBalance, double deposito, double finalAmount){
         account = new BankAccount(initialBalance);
         account.deposit(deposito);

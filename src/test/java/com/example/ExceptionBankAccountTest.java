@@ -7,7 +7,7 @@ public class ExceptionBankAccountTest {
 
     BankAccount account = new BankAccount(200);
 
-    @Test(expectedExceptions = IllegalArgumentException.class)
+    @Test(groups = {"except"},expectedExceptions = IllegalArgumentException.class)
     public void testNegativeDeposit(){
         account.deposit(-50);
         account.withdraw(-50);
@@ -15,7 +15,7 @@ public class ExceptionBankAccountTest {
 
     }
 
-    @Test(expectedExceptions = IllegalArgumentException.class)
+    @Test(groups = {"except"}, expectedExceptions = IllegalArgumentException.class)
     public void testZeroDeposit(){
         account.deposit(0);
         account.withdraw(0);

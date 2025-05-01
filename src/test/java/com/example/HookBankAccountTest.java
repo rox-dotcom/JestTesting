@@ -11,13 +11,13 @@ public class HookBankAccountTest {
 
     BankAccount account;
 
-    @BeforeClass
+    @BeforeClass(groups = "hooks")
     public void setUp(){ //initialices the account
         account = new BankAccount(100); 
                
     }
 
-     @Test
+     @Test(groups = "hooks")
     public void testDeposit() {
         int depositAmount = 50;
         double  expectedAmount = 150;
@@ -28,7 +28,7 @@ public class HookBankAccountTest {
         Assert.assertEquals(expectedAmount, realAmount);
     }
 
-    @Test
+    @Test(groups = "hooks")
     public void testWithdraw() {
         int withdrawAmount = 50;
         double expectedAmount = 100; //here the expected amount changes to 100 
@@ -40,7 +40,7 @@ public class HookBankAccountTest {
         Assert.assertEquals( expectedAmount, realAmount);
     }
 
-    @AfterClass //if we wanted it for each test we should use @AfterMethod
+    @AfterClass(groups = "hooks") //if we wanted it for each test we should use @AfterMethod
     public void tearDown(){
 
         account = null;

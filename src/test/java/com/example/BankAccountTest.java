@@ -6,7 +6,7 @@ import org.testng.annotations.Test;
 import junit.framework.Assert;
 
 public class BankAccountTest {
-    @Test
+    @Test(groups={"basic"})
     public void testDeposit() {
         BankAccount account = new BankAccount(100.0);
         int depositAmount = 50;
@@ -18,7 +18,7 @@ public class BankAccountTest {
         Assert.assertEquals(expectedAmount, realAmount);
     }
 
-    @Test
+    @Test(groups={"basic"})
     public void testWithdraw() {
         BankAccount account = new BankAccount(100.0);
         int withdrawAmount = 50;

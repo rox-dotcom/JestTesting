@@ -20,6 +20,62 @@
             <class name="com.example.GroupTest" />
         </classes>
     </test>
+
+    <test name= "basicTest">
+        <groups>
+            <run>
+            <include name="basic" />
+            </run>
+        </groups>
+        <classes>
+            <class name="com.example.BankAccountTest" />
+        </classes>
+    </test>
+
+    <test name= "hooksTest">
+        <groups>
+            <run>
+            <include name="hooks" />
+            </run>
+        </groups>
+        <classes>
+            <class name="com.example.HookBankAccountTest" />
+        </classes>
+    </test>
+
+    <test name= "dataProvideTest">
+        <groups>
+            <run>
+            <include name="data" />
+            </run>
+        </groups>
+        <classes>
+            <class name="com.example.DataBankAccountTest" />
+        </classes>
+    </test>
+
+    <test name= "ExceptTest">
+        <groups>
+            <run>
+            <include name="except" />
+            </run>
+        </groups>
+        <classes>
+            <class name="com.example.ExceptionBankAccountTest" />
+        </classes>
+    </test>
+
+    <test name= "DependencyTest">
+        <groups>
+            <run>
+            <include name="init" />
+            </run>
+        </groups>
+        <classes>
+            <class name="com.example.DependencyTest" />
+        </classes>
+    </test>
+
 </suite>
 
 
