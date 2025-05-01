@@ -18,6 +18,16 @@ public class BankAccount {
         balance -= amount;
     }
 
+    public void transfer( BankAccount account, double amount){
+        if(account == null)throw new IllegalArgumentException("Account cannot be null");
+        if(amount <= 0)throw new IllegalArgumentException("Transfer must be positive");
+        if(this.getBalance() < amount) throw new IllegalArgumentException("You don't have enough money");
+        
+        account.deposit(amount);
+        this.withdraw(amount);
+
+    }
+
     public double getBalance() {
         return balance;
     }

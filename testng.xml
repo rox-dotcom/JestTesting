@@ -76,6 +76,17 @@
         </classes>
     </test>
 
+    <test name= "BonusClass">
+        <groups>
+            <run>
+            <include name="transfer" />
+            </run>
+        </groups>
+        <classes>
+            <class name="com.example.bonusClass" />
+        </classes>
+    </test>
+
 </suite>
 
 
