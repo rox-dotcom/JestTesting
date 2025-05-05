@@ -1,5 +1,18 @@
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
 <suite name= "GroupSuite">
+    <parameter name="number-positive"  value="8"/>
+
+    <test name= "scapeRoomTest">
+        <groups>
+            <run>
+            <include name="scapeRoom" />
+            </run>
+        </groups>
+        <classes>
+            <class name="com.example.ScapeRoom" />
+        </classes>
+    </test>
+
     <test name= "negativeTest">
         <groups>
             <run>
